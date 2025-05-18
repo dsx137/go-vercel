@@ -9,8 +9,8 @@ import (
 )
 
 func CamelToSnake(s string) string {
-	var result strings.Builder
-	for i, r := range s {
+	result := strings.Builder{}
+	for i, r := range []rune(s) {
 		if unicode.IsUpper(r) && i > 0 {
 			result.WriteRune('_')
 		}
