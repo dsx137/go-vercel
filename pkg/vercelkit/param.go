@@ -10,7 +10,7 @@ import (
 
 func ReadParamsFromQuery[T any](queryParams url.Values) (*T, error) {
 	params := new(T)
-	missing := make([]string, 0)
+	missing := []string{}
 	val := reflect.ValueOf(params).Elem()
 	typ := val.Type()
 	for i := 0; i < val.NumField(); i++ {
